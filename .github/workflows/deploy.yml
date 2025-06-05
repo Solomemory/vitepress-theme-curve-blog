@@ -1,97 +1,50 @@
-name: Deploy Pages
-
-# 触发条件，push到main分支或者pull request到main分支
+name: deploy
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
-
-  # 支持手动在工作流上触发
-  workflow_dispatch:
-
-# 设置时区
-env:
-  TZ: Asia/Shanghai
-
-# 权限设置
-permissions:
-  # 允许读取仓库内容的权限。
-  contents: read
-  # 允许写入 GitHub Pages 的权限。
-  pages: write
-  # 允许写入 id-token 的权限。
-  id-token: write
-
-# 并发控制配置
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
-# 定义执行任务
+    branches:
+      - master
 jobs:
-  # 构建任务
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
-
-    # node v20 运行
-    strategy:
-      matrix:
-        node-version: [20]
-
     steps:
-      # 拉取代码
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          # 保留 Git 信息
-          fetch-depth: 0
 
-      # 设置使用 Node.js 版本
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16
 
-      # 使用 最新的 PNPM
-      # 你也可以指定为具体的版本
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v2 // 配置使用pnpm
         name: Install pnpm
+        id: pnpm-install
         with:
-          version: latest
-          # version: 9
+          version: 7
           run_install: false
 
-        # 安装依赖
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-        # 构建项目
-      - name: Build blog project
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
         run: |
-          echo ${{ github.workspace }}
-          pnpm build
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-        # 资源拷贝
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
         with:
-          source: docs/.vitepress/dist
-          destination: ./_site
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
-        # 上传 _site 的资源，用于后续部署
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Install dependencies
+        run: pnpm install
 
-  # 部署任务
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Build docs
+        run: pnpm build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.RAN_ACTIONS_TOKEN }}
+          exclude_assets: ''
+          publish_dir: packages/docs/.vitepress/dist
