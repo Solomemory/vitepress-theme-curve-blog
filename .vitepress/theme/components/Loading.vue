@@ -2,7 +2,7 @@
   <Teleport to="body">
     <Transition name="fade" mode="out-in">
       <div v-if="loadingStatus" class="loading" @click="loadingStatus = false">
-        <img :src="theme.siteMeta.logo" class="logo" alt="loading-logo" />
+        <img :src="withBasePath(theme.siteMeta.logo)" class="logo" alt="loading-logo" />
         <span :class="['tip', { show: showTip }]"> 一直显示？点击任意区域即可关闭 </span>
       </div>
     </Transition>
@@ -12,7 +12,9 @@
 <script setup>
 import { storeToRefs } from "pinia";
 import { mainStore } from "@/store";
+import { useWithBasePath } from "../hooks/useWithBasePath.mjs";
 
+const { withBasePath } = useWithBasePath();
 const store = mainStore();
 const { theme } = useData();
 const { loadingStatus } = storeToRefs(store);
@@ -54,17 +56,20 @@ onBeforeUnmount(() => {
   height: 100vh;
   background-color: var(--main-card-background);
   z-index: 9999;
+
   .logo {
     width: 100px;
     height: 100px;
     animation: loading 2s infinite;
   }
+
   .tip {
     position: absolute;
     bottom: 2rem;
     font-size: 14px;
     opacity: 0;
     transition: opacity 0.3s;
+
     &.show {
       opacity: 0.6;
     }

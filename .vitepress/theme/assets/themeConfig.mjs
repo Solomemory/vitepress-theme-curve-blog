@@ -4,7 +4,7 @@ export const themeConfig = {
   siteMeta: {
     base:"/vitepress-theme-curve-blog/",
     // 站点标题
-    title: "Curve",
+    title: "",
     // 站点描述
     description: "Hello World",
     // 站点logo
@@ -15,16 +15,16 @@ export const themeConfig = {
     lang: "zh-CN",
     // 作者
     author: {
-      name: "Admin",
+      name: "琳琳",
       cover: "/images/logo/logo.webp",
       email: "114514@gmail.com",
       link: "https://www.imsyy.top",
     },
   },
   // 备案信息
-  icp: "萌ICP备114514号",
+  icp: "******",
   // 建站日期
-  since: "2020-07-28",
+  since: "2025-06-04",
   // 每页文章数据
   postSize: 8,
   // inject
@@ -379,11 +379,11 @@ export const themeConfig = {
   music: {
     enable: false,
     // url
-    url: "https://api-meting.example.com",
+    url: "https://api.moeyao.cn/meting/",
     // id
-    id: 9379831714,
+    id: 2112569740,
     // netease / tencent / kugou
-    server: "netease",
+    server: "tencent",
     // playlist / album / song
     type: "playlist",
   },

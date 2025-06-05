@@ -7,7 +7,7 @@
           <a
             v-for="(item, index) in postMetaData.categories"
             :key="index"
-            :href="`/pages/categories/${item}`"
+            :href="withBasePath(`/pages/categories/${item}`)"
             class="cat-item"
           >
             <i class="iconfont icon-folder" />
@@ -18,7 +18,7 @@
           <a
             v-for="(item, index) in postMetaData.tags"
             :key="index"
-            :href="`/pages/tags/${item}`"
+            :href="withBasePath(`/pages/tags/${item}`)"
             class="tag-item"
           >
             <i class="iconfont icon-hashtag" />
@@ -70,7 +70,7 @@
             <a
               v-for="(item, index) in postMetaData.tags"
               :key="index"
-              :href="`/pages/tags/${item}`"
+              :href="withBasePath(`/pages/tags/${item}`)"
               class="tag-item"
             >
               <i class="iconfont icon-hashtag" />
@@ -103,7 +103,9 @@
 import { formatTimestamp } from "@/utils/helper";
 import { generateId } from "@/utils/commonTools";
 import initFancybox from "@/utils/initFancybox";
+import { useWithBasePath } from "../hooks/useWithBasePath.mjs";
 
+const { withBasePath } = useWithBasePath()
 const { page, theme, frontmatter } = useData();
 
 // 评论元素

@@ -9,7 +9,14 @@
       </Transition>
     </div>
     <Transition name="fade" mode="out-in">
-      <i v-if="height === 'full'" class="iconfont icon-up" @click="scrollToHome" />
+      <i
+        v-if="height === 'full'"
+        class="iconfont icon-up"
+        @click="scrollToHome"
+        @mouseenter="pauseAnimation"
+        @mouseleave="resumeAnimation"
+        :style="{ animationPlayState: animationState }"
+      />
     </Transition>
   </div>
   <div
@@ -81,9 +88,18 @@ const props = defineProps({
 
 const hitokotoData = ref(null);
 const hitokotoTimeOut = ref(null);
+const animationState = ref('running');
 
 // banner
 const bannerType = ref(null);
+
+const pauseAnimation = () => {
+  animationState.value = 'paused';
+};
+
+const resumeAnimation = () => {
+  animationState.value = 'running';
+};
 
 // 获取一言数据
 const getHitokotoData = async () => {
@@ -138,26 +154,31 @@ onBeforeUnmount(() => {
   justify-content: center;
   animation: fade-up 0.6s 0.1s backwards;
   transition: height 0.3s;
+
   &.full {
     opacity: 0;
     height: calc(100vh - 70px);
     padding-bottom: 100px;
     animation: fade-up 0.6s 0.5s forwards;
+
     .subtitle {
       opacity: 0;
       animation: fade-up-opacity 0.8s 0.5s forwards;
     }
   }
+
   .title {
     font-family: "Site Title";
     font-weight: bold;
     font-size: 2.75rem;
   }
+
   .subtitle {
     width: 80%;
     font-size: 1.25rem;
     opacity: 0.8;
     animation: fade-up-opacity 0.6s 0.1s backwards;
+
     .text {
       text-align: center;
       overflow: hidden;
@@ -167,6 +188,7 @@ onBeforeUnmount(() => {
       -webkit-box-orient: vertical;
     }
   }
+
   .icon-up {
     font-size: 20px;
     position: absolute;
@@ -174,8 +196,10 @@ onBeforeUnmount(() => {
     left: calc(50% - 10px);
     transform: rotate(180deg);
     animation: moveDown 2s ease-in-out infinite;
+    animation-play-state: v-bind(animationState);
     cursor: pointer;
   }
+
   @media (max-width: 768px) {
     align-items: flex-start;
     height: 240px;
@@ -186,12 +210,14 @@ onBeforeUnmount(() => {
       height: 50px;
       font-size: 1.125rem;
       margin-left: 8px;
+
       .text {
         text-align: left;
       }
     }
   }
 }
+
 .banner-page {
   position: relative;
   display: flex;
@@ -199,19 +225,23 @@ onBeforeUnmount(() => {
   padding: 2rem;
   min-height: 380px;
   background-size: cover;
+
   .top {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2rem;
+
     .title {
       display: flex;
       flex-direction: column;
+
       .title-small {
         color: var(--main-font-second-color);
         font-size: 0.875rem;
       }
+
       .title-big {
         font-size: 2.25rem;
         font-weight: bold;
@@ -220,35 +250,42 @@ onBeforeUnmount(() => {
       }
     }
   }
+
   .footer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     margin-top: auto;
+
     .footer-left {
       margin-top: auto;
       color: var(--main-font-second-color);
       opacity: 0.8;
     }
   }
+
   &.image {
     color: #fff !important;
+
     .top {
       .title-small {
         color: #fff;
         opacity: 0.6;
       }
     }
+
     .footer {
       .footer-left {
         color: #fff;
       }
+
       :deep(.iconfont) {
         color: #fff !important;
       }
     }
   }
+
   @media (max-width: 1200px) {
     min-height: 300px;
   }

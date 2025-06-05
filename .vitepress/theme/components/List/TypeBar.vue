@@ -4,43 +4,47 @@
     <div class="all-type">
       <a
         v-if="currentTypeName"
-        :href="`/pages/categories/${currentTypeName}`"
+        :href="withBasePath(`/pages/categories/${currentTypeName}`)"
         class="type-item choose"
       >
         {{ currentTypeName }}
       </a>
-      <a href="/" :class="['type-item', { choose: !currentTypeName }]">首页</a>
+      <a :href="withBasePath('/')" :class="['type-item', { choose: !currentTypeName }]">首页</a>
       <a
         v-for="(_, key, index) in theme.categoriesData"
         :key="index"
-        :href="`/pages/categories/${key}`"
+        :href="withBasePath(`/pages/categories/${key}`)"
         :class="['type-item', { hidden: currentTypeName === key }]"
       >
         {{ key }}
       </a>
     </div>
-    <a href="/pages/categories" class="more-type">
+    <a :href="withBasePath('/pages/categories')" class="more-type">
       <i class="iconfont icon-arrow-right" />
       更多
     </a>
   </div>
   <div v-else-if="type === 'tags'" class="type-bar s-card hover">
     <div class="all-type">
-      <a v-if="currentTypeName" :href="`/pages/tags/${currentTypeName}`" class="type-item choose">
+      <a
+        v-if="currentTypeName"
+        :href="withBasePath(`/pages/tags/${currentTypeName}`)"
+        class="type-item choose"
+      >
         {{ currentTypeName }}
         <span class="num">{{ theme.tagsData?.[currentTypeName]?.count || 0 }}</span>
       </a>
       <a
         v-for="(item, key, index) in theme.tagsData"
         :key="index"
-        :href="`/pages/tags/${key}`"
+        :href="withBasePath(`/pages/tags/${key}`)"
         :class="['type-item', { hidden: currentTypeName === key }]"
       >
         {{ key }}
         <span class="num">{{ item.count }}</span>
       </a>
     </div>
-    <a href="/pages/tags" class="more-type">
+    <a :href="withBasePath('/pages/tags')" class="more-type">
       <i class="iconfont icon-arrow-right" />
       更多
     </a>
@@ -48,6 +52,9 @@
 </template>
 
 <script setup>
+import { useWithBasePath } from "../../hooks/useWithBasePath.mjs";
+
+const { withBasePath } = useWithBasePath();
 const { theme, params } = useData();
 const props = defineProps({
   // 显示类别
@@ -74,6 +81,7 @@ const currentTypeName = computed(() => {
   padding: 0.6rem;
   font-weight: bold;
   animation: fade-up 0.6s 0.3s backwards;
+
   .all-type {
     width: 100%;
     display: flex;
@@ -88,6 +96,7 @@ const currentTypeName = computed(() => {
       hsla(0, 0%, 100%, 0.6) 95%,
       hsla(0, 0%, 100%, 0) 100%
     );
+
     .type-item {
       display: flex;
       align-items: center;
@@ -98,6 +107,7 @@ const currentTypeName = computed(() => {
       white-space: nowrap;
       height: 30px;
       cursor: pointer;
+
       .num {
         margin-left: 4px;
         font-weight: normal;
@@ -107,22 +117,27 @@ const currentTypeName = computed(() => {
         background-color: var(--main-card-border);
         border-radius: 8px;
       }
+
       &.choose {
         color: var(--main-card-background);
         background-color: var(--main-color);
+
         .num {
           color: var(--main-color);
         }
       }
+
       &.hidden {
         display: none;
       }
+
       &:hover {
         color: var(--main-card-background);
         background-color: var(--main-color);
       }
     }
   }
+
   .more-type {
     display: flex;
     flex-direction: row;
@@ -130,10 +145,12 @@ const currentTypeName = computed(() => {
     white-space: nowrap;
     margin-right: 4px;
     margin-left: 8px;
+
     .iconfont {
       font-size: 0.9375rem;
       margin-right: 8px;
     }
+
     &:hover {
       .iconfont {
         color: var(--main-color);

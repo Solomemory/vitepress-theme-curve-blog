@@ -10,7 +10,7 @@
         show: infoPosition === 'fixed' && nextPostShow && !footerIsShow,
       },
     ]"
-    @click="router.go(nextPostData?.regularPath)"
+    @click="router.go(withBasePath(nextPostData?.regularPath))"
   >
     <span class="post-tip">
       {{ isNextPost ? "下一篇阅读" : "阅读上一篇" }}
@@ -25,9 +25,11 @@
 import { storeToRefs } from "pinia";
 import { mainStore } from "@/store";
 import { generateId } from "@/utils/commonTools";
+import { useWithBasePath } from "../hooks/useWithBasePath.mjs";
 
 const router = useRouter();
 const store = mainStore();
+const { withBasePath } = useWithBasePath();
 const { theme, page } = useData();
 const { footerIsShow, infoPosition } = storeToRefs(store);
 
@@ -101,6 +103,7 @@ onBeforeUnmount(() => {
   flex-direction: column;
   padding: 20px;
   background-color: var(--main-card-background);
+
   .post-tip {
     font-size: 14px;
     color: var(--main-font-second-color);
@@ -109,6 +112,7 @@ onBeforeUnmount(() => {
     border-bottom: 1px dashed var(--main-card-border);
     transition: color 0.3s;
   }
+
   .post-title {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -116,6 +120,7 @@ onBeforeUnmount(() => {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+
   &.fixed {
     position: fixed;
     right: 20px;
@@ -125,20 +130,24 @@ onBeforeUnmount(() => {
     width: 300px;
     transform: translateY(180px);
   }
+
   &.show {
     opacity: 1;
     transform: translateY(0);
   }
+
   &:hover {
     background-color: var(--main-color);
     border-color: var(--main-color);
     color: var(--main-card-background);
     box-shadow: 0 8px 16px -4px var(--main-color-bg);
+
     .post-tip {
       opacity: 0.8;
       color: var(--main-card-background);
     }
   }
+
   @media (max-width: 768px) {
     display: none;
   }

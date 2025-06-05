@@ -9,18 +9,21 @@
       <a
         v-for="(item, tag, index) in theme.tagsData"
         :key="index"
-        :href="`/pages/tags/${tag}`"
+        :href="withBasePath(`/pages/tags/${tag}`)"
         class="tags"
       >
         <span class="name">{{ tag }}</span>
         <sup class="num">{{ item.count }}</sup>
       </a>
     </div>
-    <a href="/pages/tags" class="more-tags">查看全部</a>
+    <a :href="withBasePath('/pages/tags')" class="more-tags">查看全部</a>
   </div>
 </template>
 
 <script setup>
+import { useWithBasePath } from "../../../hooks/useWithBasePath.mjs";
+
+const { withBasePath } = useWithBasePath();
 const { theme } = useData();
 </script>
 
@@ -33,20 +36,24 @@ const { theme } = useData();
     flex-wrap: wrap;
     max-height: 500px;
     overflow: hidden;
+
     .tags {
       display: inline-block;
       padding: 4px 8px;
       margin: 2px;
       border-radius: 8px;
+
       .num {
         margin-left: 2px;
         opacity: 0.6;
       }
+
       &:hover {
         color: var(--main-color);
         background-color: var(--main-color-bg);
       }
     }
+
     &::after {
       content: "";
       position: absolute;
@@ -59,6 +66,7 @@ const { theme } = useData();
       pointer-events: none;
     }
   }
+
   .more-tags {
     display: flex;
     align-items: center;
@@ -69,6 +77,7 @@ const { theme } = useData();
     font-size: 14px;
     border: 1px solid var(--main-card-border);
     background-color: var(--main-card-second-background);
+
     &:hover {
       color: var(--main-color);
       border-color: var(--main-color-bg);

@@ -17,7 +17,7 @@
         <i :class="`iconfont icon-${item.icon}`"></i>
       </a>
       <div class="logo" title="返回顶部" @click="smoothScrolling">
-        <img :src="siteMeta.author.cover" alt="author" class="author" />
+        <img :src="withBasePath(siteMeta.author.cover)" alt="author" class="author" />
       </div>
       <a
         v-for="(item, index) in socialLinkData.second"
@@ -50,7 +50,9 @@
 
 <script setup>
 import { smoothScrolling } from "@/utils/helper";
+import { useWithBasePath } from "../hooks/useWithBasePath.mjs";
 
+const { withBasePath } = useWithBasePath();
 const { theme, site } = useData();
 const { footer, siteMeta } = theme.value;
 const props = defineProps({
@@ -82,22 +84,26 @@ const socialLinkData = computed(() => {
   margin-bottom: 3rem;
   padding: 0 1rem;
   animation: show 0.3s backwards;
+
   .footer-bar {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
+
     .site-title {
       font-weight: bold;
       font-size: 22px;
     }
+
     .site-desc {
       margin: 0.6rem 0;
       font-weight: bold;
       font-size: 18px;
       color: var(--main-font-second-color);
     }
+
     .to-home {
       padding: 8px 16px;
       border-radius: 25px;
@@ -112,6 +118,7 @@ const socialLinkData = computed(() => {
         border-color 0.3s,
         background-color 0.3s;
       cursor: pointer;
+
       &:hover {
         color: var(--main-card-background);
         background-color: var(--main-color);
@@ -120,6 +127,7 @@ const socialLinkData = computed(() => {
       }
     }
   }
+
   .footer-social {
     width: 100%;
     display: flex;
@@ -128,6 +136,7 @@ const socialLinkData = computed(() => {
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
+
     .social-link {
       display: flex;
       justify-content: center;
@@ -140,41 +149,50 @@ const socialLinkData = computed(() => {
       transition:
         transform 0.3s,
         background-color 0.3s;
+
       .iconfont {
         font-size: 20px;
         color: var(--main-card-background);
       }
+
       &:hover {
         transform: scale(1.15);
         background-color: var(--main-color);
       }
+
       &:active {
         transform: scale(1);
       }
     }
+
     .logo {
       width: 60px;
       height: 60px;
       margin: 0 1rem;
       transition: transform 0.3s;
       cursor: pointer;
+
       img {
         width: 100%;
         height: 100%;
       }
+
       &:hover {
         transform: scale(1.2);
       }
+
       &:active {
         transform: scale(1);
       }
     }
+
     @media (max-width: 768px) {
       .logo {
         display: none;
       }
     }
   }
+
   .footer-sitemap {
     width: 100%;
     display: flex;
@@ -182,11 +200,13 @@ const socialLinkData = computed(() => {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 1rem 0;
+
     .sitemap-item {
       display: flex;
-    flex-direction: column;
-    align-items: center;
+      flex-direction: column;
+      align-items: center;
       min-width: 120px;
+
       .title {
         display: inline-block;
         margin: 1rem 0;
@@ -194,26 +214,31 @@ const socialLinkData = computed(() => {
         font-weight: bold;
         // margin-left: 8px;
         color: var(--main-font-second-color);
+
         &.friends {
           display: flex;
           flex-direction: row;
           align-items: center;
           cursor: pointer;
+
           .iconfont {
             font-weight: normal;
             margin-left: 6px;
             color: var(--main-font-second-color);
             transition: color 0.3s;
+
             &:hover {
               color: var(--main-color);
             }
           }
         }
       }
+
       .links {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         .link-text {
           color: var(--main-font-color);
           display: inline-block;
@@ -230,6 +255,7 @@ const socialLinkData = computed(() => {
             color 0.3s,
             background-color 0.3s;
           cursor: pointer;
+
           &:hover {
             color: var(--main-color);
             background-color: var(--main-color-bg);

@@ -6,7 +6,9 @@
         <i class="iconfont icon-star"></i>
         相关推荐
       </span>
-      <span class="shuffle" @click="router.go(shufflePost(theme.postData))"> 随便逛逛 </span>
+      <span class="shuffle" @click="router.go(withBasePath(shufflePost(theme.postData)))">
+        随便逛逛
+      </span>
     </div>
     <!-- 文章列表 -->
     <PostList :listData="relatedData" simple />
@@ -16,8 +18,10 @@
 <script setup>
 import { generateId } from "@/utils/commonTools";
 import { shufflePost } from "@/utils/helper";
+import { useWithBasePath } from "../hooks/useWithBasePath.mjs";
 
 const router = useRouter();
+const { withBasePath } = useWithBasePath();
 const { theme, page, frontmatter } = useData();
 
 // 文章信息
@@ -55,6 +59,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .related-post {
   margin-top: 1rem;
+
   .title {
     display: flex;
     flex-direction: row;
@@ -63,17 +68,20 @@ onMounted(() => {
     width: 100%;
     margin: 3rem 0 1rem 0;
     padding: 0 6px;
+
     .name {
       display: flex;
       align-items: center;
       font-size: 24px;
       font-weight: bold;
+
       .iconfont {
         font-size: 26px;
         font-weight: normal;
         margin-right: 8px;
       }
     }
+
     .shuffle {
       opacity: 0.6;
       font-size: 14px;
@@ -81,6 +89,7 @@ onMounted(() => {
         color 0.3s,
         opacity 0.3s;
       cursor: pointer;
+
       &:hover {
         opacity: 1;
         color: var(--main-color);
