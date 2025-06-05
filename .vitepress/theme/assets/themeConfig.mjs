@@ -1,5 +1,6 @@
 // 主题配置
 export const themeConfig = {
+  base: "/vitepress-theme-curve-blog/",
   // 站点信息
   siteMeta: {
     // 站点标题
@@ -224,12 +225,10 @@ export const themeConfig = {
       // 是否开启封面显示 文章不设置cover封面会显示异常，可以设置下方默认封面
       enable: false,
       // 封面布局方式: left | right | both
-      coverLayout: 'both',
+      coverLayout: "both",
       // 默认封面(随机展示)
-      defaultCover: [
-        'https://rba.kanostar.top/adapt',
-      ]
-    }
+      defaultCover: ["https://rba.kanostar.top/adapt"],
+    },
   },
   // 页脚信息
   footer: {
