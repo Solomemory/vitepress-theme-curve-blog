@@ -2,6 +2,7 @@
 export const themeConfig = {
   // 站点信息
   siteMeta: {
+    base:"/vitepress-theme-curve-blog/",
     // 站点标题
     title: "Curve",
     // 站点描述
