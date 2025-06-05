@@ -1,6 +1,5 @@
 // 主题配置
 export const themeConfig = {
-  base: "/vitepress-theme-curve-blog/",
   // 站点信息
   siteMeta: {
     // 站点标题
