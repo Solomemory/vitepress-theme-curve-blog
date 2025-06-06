@@ -10,7 +10,7 @@
       <a
         v-for="(item, index) in socialLinkData.first"
         :key="index"
-        :href="item.link"
+        :href="withBasePath(item.link)"
         target="_blank"
         class="social-link"
       >
@@ -22,7 +22,7 @@
       <a
         v-for="(item, index) in socialLinkData.second"
         :key="index"
-        :href="item.link"
+        :href="withBasePath(item.link)"
         target="_blank"
         class="social-link"
       >
@@ -36,7 +36,7 @@
           <a
             v-for="(link, linkIndex) in item.items"
             :key="linkIndex"
-            :href="link.link"
+            :href="withBasePath(link.link)"
             :target="link.newTab ? '_blank' : null"
             class="link-text"
           >
@@ -80,8 +80,7 @@ const socialLinkData = computed(() => {
   justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
-  margin: 1rem auto;
-  margin-bottom: 3rem;
+  margin: 1rem auto 3rem;
   padding: 0 1rem;
   animation: show 0.3s backwards;
 

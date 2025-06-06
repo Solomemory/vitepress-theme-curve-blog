@@ -2,7 +2,7 @@
 export const themeConfig = {
   // 站点信息
   siteMeta: {
-    base:"/vitepress-theme-curve-blog/",
+    base: "/vitepress-theme-curve-blog/",
     // 站点标题
     title: "",
     // 站点描述
@@ -236,27 +236,19 @@ export const themeConfig = {
     social: [
       {
         icon: "email",
-        link: "mailto:one@imsyy.top",
+        link: "2417383276@qq.com",
       },
       {
         icon: "github",
-        link: "https://www.github.com/imsyy/",
-      },
-      {
-        icon: "telegram",
-        link: "https://t.me/bottom_user",
+        link: "https://github.com/Solomemory",
       },
       {
         icon: "bilibili",
-        link: "https://space.bilibili.com/98544142",
+        link: "https://space.bilibili.com/406313421",
       },
       {
         icon: "qq",
-        link: "https://res.abeim.cn/api/qq/?qq=1539250352",
-      },
-      {
-        icon: "twitter-x",
-        link: "https://twitter.com/iimmsyy",
+        link: "https://res.abeim.cn/api/qq/?qq=2417383276",
       },
     ],
     // sitemap
@@ -272,12 +264,7 @@ export const themeConfig = {
       },
       {
         text: "项目",
-        items: [
-          { text: "Home", link: "https://github.com/imsyy/home/", newTab: true },
-          { text: "SPlayer", link: "https://github.com/imsyy/SPlayer/", newTab: true },
-          { text: "DailyHotApi", link: "https://github.com/imsyy/DailyHotApi/", newTab: true },
-          { text: "Snavigation", link: "https://github.com/imsyy/Snavigation/", newTab: true },
-        ],
+        items: [],
       },
       {
         text: "专栏",

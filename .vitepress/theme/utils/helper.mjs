@@ -1,6 +1,5 @@
 import { mainStore } from "@/store";
 import { throttle } from "lodash-es";
-
 /**
  * 计算滚动高度和滚动百分比
  */

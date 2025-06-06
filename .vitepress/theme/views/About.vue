@@ -44,7 +44,7 @@
           <i>無限進步</i>
         </span>
         <div class="list">
-          <span class="list-item" style="--color: #357ef5">ZZRVTC · 计算机应用技术</span>
+          <span class="list-item" style="--color: #357ef5">ZZRVTC · 软件技术</span>
           <span class="list-item" style="--color: #eb372a">FE · 前端开发工程师</span>
         </div>
         <img
@@ -58,14 +58,14 @@
       <!-- 性格 -->
       <div class="about-item character" style="--color: #4298b4">
         <span class="tip">性格</span>
-        <span class="title2">物流师</span>
-        <span class="title2" style="color: var(--color)">ISTJ-A / ISTJ-T</span>
+        <span class="title2">调停者</span>
+        <span class="title2" style="color: var(--color)">INFP-A / INFP-T</span>
         <span class="more">
           在
           <a href="https://www.16personalities.com/ch/" target="_blank">16personalities</a>
           了解更多关于
-          <a href="https://www.16personalities.com/ch/istj-%E4%BA%BA%E6%A0%BC" target="_blank">
-            物流师
+          <a href="https://www.16personalities.com/ch/infp-%E4%BA%BA%E6%A0%BC" target="_blank">
+            调停者
           </a>
         </span>
         <img
@@ -144,7 +144,7 @@
           class="about-item map image"
           style="background-image: url(https://pic.efefee.cn/uploads/2024/04/15/661cbccc56af5.webp)"
         >
-          <span class="position">我现在住在 <strong>中国，河南省</strong></span>
+          <span class="position">我现在住在 <strong>中国，山东省</strong></span>
         </div>
         <div class="about-item info">
           <div class="info-item">
