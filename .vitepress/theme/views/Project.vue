@@ -5,7 +5,7 @@
       title="我的项目"
       desc="源于热爱开发优秀的作品"
       footer="写 BUG 小能手"
-      image="https://pic.efefee.cn/uploads/2024/02/27/65dd8dae6043c.webp"
+      image="https://img1.baidu.com/it/u=686946274,928283611&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800"
     >
       <template #footer-slot>
         <a class="to-github" href="https://github.com/imsyy/" target="_blank">
