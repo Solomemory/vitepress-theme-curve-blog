@@ -27,7 +27,7 @@
             <div class="cover">
               <LazyLoader :useFriendsLink="link.avatar || link.ico">
                 <img
-                  :src="link.avatar || link.ico"
+                  :src="link.avatar || link.ico || `https://favicon.im/zh/${link.url}/`"
                   :class="['cover-img', { 'cf-friends-avatar': useFriendsLink }]"
                   :alt="link?.name || 'cover'"
                   @load="(e) => e.target.classList.add('loaded')"
@@ -95,6 +95,7 @@ const props = defineProps({
         height: 90px;
         width: 100%;
         padding: 12px;
+        overflow: hidden;
         &.loss {
           pointer-events: none;
         }

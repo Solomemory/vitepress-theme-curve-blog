@@ -24,7 +24,7 @@
               </div>
             </div>
           </div>
-          <div class="site-name" @click="router.go('/')">
+          <div class="site-name" @click="router.go(withBasePath('/'))">
             {{ site.title }}
           </div>
         </div>

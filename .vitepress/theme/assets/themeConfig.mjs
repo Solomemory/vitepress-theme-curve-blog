@@ -377,9 +377,9 @@ export const themeConfig = {
   // 搜索
   // https://www.algolia.com/
   search: {
-    enable: false,
-    appId: "",
-    apiKey: "",
+    enable: true,
+    appId: "HESHAK2YAH",
+    apiKey: "f1adc0e638a7fc154fd44f325ffaf252",
   },
   // 打赏
   rewardData: {

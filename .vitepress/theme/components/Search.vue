@@ -9,9 +9,6 @@
   >
     <ais-instant-search
       :search-client="searchClient"
-      :future="{
-        preserveSharedStateOnUnmount: true,
-      }"
       index-name="imsyy"
       @state-change="searchChange"
     >
