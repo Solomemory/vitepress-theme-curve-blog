@@ -9,7 +9,7 @@
   >
     <ais-instant-search
       :search-client="searchClient"
-      index-name="imsyy"
+      index-name="blog"
       @state-change="searchChange"
     >
       <ais-configure :hits-per-page.camel="8" />
