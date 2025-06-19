@@ -4,9 +4,9 @@ export const themeConfig = {
   siteMeta: {
     base: "/vitepress-theme-curve-blog/",
     // 站点标题
-    title: "",
+    title: "Lin琳",
     // 站点描述
-    description: "Hello World",
+    description: "Lin琳",
     // 站点logo
     logo: "/images/logo/logo.webp",
     // 站点地址
@@ -15,7 +15,7 @@ export const themeConfig = {
     lang: "zh-CN",
     // 作者
     author: {
-      name: "琳琳",
+      name: "Lin",
       cover: "/images/logo/logo.webp",
       email: "114514@gmail.com",
       link: "https://www.imsyy.top",
@@ -155,61 +155,6 @@ export const themeConfig = {
         },
       ],
     },
-    {
-      name: "服务",
-      list: [
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/6613465358077.png",
-          name: "起始页",
-          url: "https://nav.imsyy.top/",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/661346d418ad7.png",
-          name: "今日热榜",
-          url: "https://hot.imsyy.top/",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/66134722586fa.png",
-          name: "站点监测",
-          url: "https://status.imsyy.top/",
-        },
-      ],
-    },
-    {
-      name: "项目",
-      list: [
-        {
-          icon: "/images/logo/logo.webp",
-          name: "Curve",
-          url: "https://github.com/imsyy/vitepress-theme-curve",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/07/66124f5fc63c8.png",
-          name: "SPlayer",
-          url: "https://github.com/imsyy/SPlayer",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/6613465358077.png",
-          name: "Snavigation",
-          url: "https://github.com/imsyy/SPlayer",
-        },
-        {
-          icon: "/images/logo/logo.webp",
-          name: "Home",
-          url: "https://github.com/imsyy/home",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/661346d418ad7.png",
-          name: "DailyHotApi",
-          url: "https://github.com/imsyy/DailyHotApi",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/66134722586fa.png",
-          name: "site-status",
-          url: "https://github.com/imsyy/site-status",
-        },
-      ],
-    },
   ],
   // 封面配置
   cover: {
@@ -258,10 +203,6 @@ export const themeConfig = {
         ],
       },
       {
-        text: "项目",
-        items: [],
-      },
-      {
         text: "专栏",
         items: [
           { text: "技术分享", link: "/pages/categories/技术分享" },
@@ -276,19 +217,6 @@ export const themeConfig = {
           { text: "关于本站", link: "/pages/about" },
           { text: "隐私政策", link: "/pages/privacy" },
           { text: "版权协议", link: "/pages/cc" },
-        ],
-      },
-      {
-        text: "服务",
-        items: [
-          { text: "站点状态", link: "https://status.imsyy.top/", newTab: true },
-          { text: "一个导航", link: "https://nav.imsyy.top/", newTab: true },
-          { text: "站点订阅", link: "https://blog.imsyy.top/rss.xml", newTab: true },
-          {
-            text: "反馈投诉",
-            link: "https://eqnxweimkr5.feishu.cn/share/base/form/shrcnCXCPmxCKKJYI3RKUfefJre",
-            newTab: true,
-          },
         ],
       },
     ],
@@ -337,7 +265,7 @@ export const themeConfig = {
       // 倒计时日期
       data: {
         name: "春节",
-        date: "2025-01-29",
+        date: "2026-02-17",
       },
     },
     // 站点数据
@@ -378,11 +306,11 @@ export const themeConfig = {
   },
   // 打赏
   rewardData: {
-    enable: true,
+    enable: false,
     // 微信二维码
-    wechat: "https://pic.efefee.cn/uploads/2024/04/07/66121049d1e80.webp",
+    wechat: "",
     // 支付宝二维码
-    alipay: "https://pic.efefee.cn/uploads/2024/04/07/661206631d3b5.webp",
+    alipay: "",
   },
   // 图片灯箱
   fancybox: {

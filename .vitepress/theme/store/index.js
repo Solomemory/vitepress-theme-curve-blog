@@ -6,8 +6,8 @@ export const mainStore = defineStore("main", {
       // 主题类别
       themeType: "auto",
       themeValue: "light",
-      // banner
-      bannerType: "half",
+      // banner (half full)
+      bannerType: "full",
       // 加载状态
       loadingStatus: true,
       // 滚动高度

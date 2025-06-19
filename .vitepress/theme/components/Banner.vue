@@ -1,6 +1,6 @@
 <template>
   <div v-if="type === 'text'" :class="['banner', bannerType]" id="main-banner">
-    <h1 class="title">你好，欢迎来到{{ theme.siteMeta.title }}</h1>
+    <h1 class="title">{{ theme.siteMeta.title }}</h1>
     <div class="subtitle">
       <Transition name="fade" mode="out-in">
         <span :key="hitokotoData?.hitokoto" class="text">
@@ -88,17 +88,17 @@ const props = defineProps({
 
 const hitokotoData = ref(null);
 const hitokotoTimeOut = ref(null);
-const animationState = ref('running');
+const animationState = ref("running");
 
 // banner
 const bannerType = ref(null);
 
 const pauseAnimation = () => {
-  animationState.value = 'paused';
+  animationState.value = "paused";
 };
 
 const resumeAnimation = () => {
-  animationState.value = 'running';
+  animationState.value = "running";
 };
 
 // 获取一言数据

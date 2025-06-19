@@ -12,7 +12,7 @@
             v-for="(post, postIndex) in theme.archivesData.data[year].articles"
             :key="postIndex"
             class="posts-item s-card hover"
-            @click="router.go(post.regularPath)"
+            @click="router.go(withBasePath(post.regularPath))"
           >
             <span class="title">{{ post.title }}</span>
             <div class="tags">
@@ -34,8 +34,11 @@
 </template>
 
 <script setup>
+import { useWithBasePath } from "../hooks/useWithBasePath.mjs";
+
 const { theme } = useData();
 const router = useRouter();
+const { withBasePath } = useWithBasePath();
 </script>
 
 <style lang="scss" scoped>
