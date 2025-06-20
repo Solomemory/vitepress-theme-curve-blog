@@ -18,7 +18,7 @@
       @click="toPost(withBasePath(item.regularPath))"
     >
       <div v-if="!simple && showCover(item)" class="post-cover">
-        <img :src="getCover(withBasePath(item))" :alt="item.title" />
+        <img :src="withBasePath(getCover(item))" :alt="item.title" />
       </div>
 
       <div class="post-content">

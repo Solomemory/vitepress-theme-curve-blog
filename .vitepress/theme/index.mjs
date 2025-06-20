@@ -4,6 +4,7 @@ import { routeChange } from "@/utils/initTools.mjs";
 import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client";
 import LazyLoader from "@/components/LazyLoader.vue";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
+import "leaflet/dist/leaflet.css";
 
 // 根组件
 import App from "@/App.vue";

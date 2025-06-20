@@ -2,7 +2,7 @@
   <button class="pushable">
     <span class="shadow"></span>
     <span class="edge"></span>
-    <span class="front"> {{ label }} </span>
+    <span class="front"> {{ label }} <slot></slot></span>
   </button>
 </template>
 

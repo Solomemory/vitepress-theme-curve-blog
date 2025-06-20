@@ -1,7 +1,7 @@
 import { withBase } from "vitepress";
 
 export const useWithBasePath = () => {
-  const withBasePath = (path) => {
+  const withBasePath = (path = "") => {
     if (path.startsWith("http") || path.startsWith("https")) {
       return path;
     }

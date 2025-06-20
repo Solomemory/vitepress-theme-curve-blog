@@ -16,15 +16,19 @@
         <sup class="num">{{ item.count }}</sup>
       </a>
     </div>
-    <a :href="withBasePath('/pages/tags')" class="more-tags">查看全部</a>
+    <Button @click="() => router.go(withBasePath('/pages/tags'))" style="width: 100%"
+      >查看全部</Button
+    >
   </div>
 </template>
 
 <script setup>
 import { useWithBasePath } from "../../../hooks/useWithBasePath.mjs";
+import Button from "../../Button.vue";
 
 const { withBasePath } = useWithBasePath();
 const { theme } = useData();
+const router = useRouter();
 </script>
 
 <style lang="scss" scoped>

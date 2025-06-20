@@ -4,9 +4,9 @@ export const themeConfig = {
   siteMeta: {
     base: "/vitepress-theme-curve-blog/",
     // 站点标题
-    title: "Lin琳",
+    title: "一只夜默",
     // 站点描述
-    description: "Lin琳",
+    description: "一只夜默",
     // 站点logo
     logo: "/images/logo/logo.webp",
     // 站点地址
@@ -15,7 +15,7 @@ export const themeConfig = {
     lang: "zh-CN",
     // 作者
     author: {
-      name: "Lin",
+      name: "一只夜默",
       cover: "/images/logo/logo.webp",
       email: "114514@gmail.com",
       link: "https://www.imsyy.top",
@@ -122,40 +122,29 @@ export const themeConfig = {
     {
       text: "专栏",
       items: [
-        { text: "技术分享", link: "/pages/categories/技术分享", icon: "technical" },
         { text: "我的项目", link: "/pages/project", icon: "code" },
         { text: "效率工具", link: "/pages/tools", icon: "tools" },
+        { text: "行旅屐影", link: "/pages/footprint", icon: "tools" },
       ],
     },
     {
       text: "友链",
-      items: [
-        { text: "友链鱼塘", link: "/pages/friends", icon: "fish" },
-        { text: "友情链接", link: "/pages/link", icon: "people" },
-      ],
-    },
-    {
-      text: "我的",
-      items: [
-        { text: "畅所欲言", link: "/pages/message", icon: "chat" },
-        { text: "致谢名单", link: "/pages/thanks", icon: "reward" },
-        { text: "关于本站", link: "/pages/about", icon: "contacts" },
-      ],
+      items: [{ text: "友情链接", link: "/pages/link", icon: "people" }],
     },
   ],
   // 导航栏菜单 - 左侧
-  navMore: [
-    {
-      name: "博客",
-      list: [
-        {
-          icon: "/images/logo/logo.webp",
-          name: "主站",
-          url: "/",
-        },
-      ],
-    },
-  ],
+  // navMore: [
+  //   {
+  //     name: "博客",
+  //     list: [
+  //       {
+  //         icon: "/images/logo/logo.webp",
+  //         name: "主站",
+  //         url: "/",
+  //       },
+  //     ],
+  //   },
+  // ],
   // 封面配置
   cover: {
     // 是否开启双栏布局
@@ -300,7 +289,7 @@ export const themeConfig = {
   // 搜索
   // https://www.algolia.com/
   search: {
-    enable: true,
+    enable: false,
     appId: "HESHAK2YAH",
     apiKey: "f1adc0e638a7fc154fd44f325ffaf252",
   },

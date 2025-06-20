@@ -4,7 +4,7 @@
       <div class="nav-all">
         <!-- 导航栏左侧 -->
         <div class="left-nav">
-          <div class="more-menu nav-btn" title="更多内容">
+          <div v-if="theme.navMore?.length" class="more-menu nav-btn" title="更多内容">
             <i class="iconfont icon-menu" />
             <div class="more-card s-card">
               <div v-for="(item, index) in theme.navMore" :key="index" class="more-item">
@@ -25,7 +25,7 @@
             </div>
           </div>
           <div class="site-name" @click="router.go(withBasePath('/'))">
-            {{ site.title }}
+            <!--{{ site.title }}-->
           </div>
         </div>
         <!-- 导航栏菜单 -->
@@ -64,7 +64,7 @@
           <div
             class="menu-btn nav-btn"
             title="随机前往一篇文章"
-            @click="router.go(shufflePost(theme.postData))"
+            @click="router.go(withBasePath(shufflePost(theme.postData)))"
           >
             <i class="iconfont icon-shuffle"></i>
           </div>
@@ -302,6 +302,7 @@ const { site, theme, frontmatter, page } = useData();
       }
 
       .site-name {
+        min-width: 80px;
         position: relative;
         display: flex;
         align-items: center;
@@ -327,18 +328,16 @@ const { site, theme, frontmatter, page } = useData();
           left: 0;
           width: 100%;
           height: 100%;
-          color: var(--main-card-background);
-          background-color: var(--main-color);
           font-size: 22px;
           border-radius: 25px;
-          opacity: 0;
-          transition: opacity 0.3s;
+          transition: all 0.3s;
         }
 
         @media (min-width: 768px) {
           &:hover {
             &::after {
-              opacity: 1;
+              color: var(--main-card-background);
+              background-color: var(--main-color);
             }
           }
           &:active {
