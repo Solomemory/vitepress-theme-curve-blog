@@ -15,6 +15,7 @@ coverage
 *.local
 test.html
 .env
+.history
 .vitepress/dist
 .vitepress/cache
 .vitepress/components.d.ts

@@ -334,4 +334,7 @@ export const themeConfig = {
   tongji: {
     "51la": "",
   },
+  leaflet: {
+    mapKey: "7c366a612c073b269a2a543f8bbae0d8",
+  },
 };
