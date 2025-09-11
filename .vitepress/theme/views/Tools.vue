@@ -4,12 +4,6 @@
     <!-- 顶图 -->
     <Banner type="page" title="效率工具" desc="与各位博主无限进步">
       <template v-slot:header-slot>
-        <!--        <div class="menu">-->
-        <!--          <div class="menu-item" @click="randomJump">-->
-        <!--            <i class="iconfont icon-shuffle" />-->
-        <!--            <span class="name">随机访问</span>-->
-        <!--          </div>-->
-        <!--        </div>-->
         <Button label="随机访问" @click="randomJump"></Button>
       </template>
     </Banner>
@@ -19,7 +13,7 @@
 </template>
 
 <script setup>
-import toolsData from "@/assets/ToolsData.mjs";
+import toolsData from "@/assets/toolsData.mjs";
 import Button from "@/components/Button.vue";
 
 // 全部友链
