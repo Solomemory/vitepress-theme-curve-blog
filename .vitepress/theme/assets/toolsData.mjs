@@ -7,8 +7,8 @@ const toolsData = [
     typeList: [
       {
         name: "uniCloud",
-        desc: "一站式云服务，助力项目快速开发部署",
-        url: "https://unicloud.dcloud.net.cn/?pageid=",
+        desc: "JS开发服务端，Serverless云开发",
+        url: "https://unicloud.dcloud.net.cn/",
       },
     ],
   },
@@ -25,12 +25,7 @@ const toolsData = [
       {
         name: "Gitee",
         desc: "代码托管佳选，承载项目成长点滴历程",
-        url: "https://gitee.com/lin2132",
-      },
-      {
-        name: "GitHub",
-        desc: "GitHub国内镜像",
-        url: "https://bgithub.xyz/",
+        url: "https://gitee.com",
       },
     ],
   },
@@ -41,22 +36,17 @@ const toolsData = [
     typeList: [
       {
         name: "摹客RP",
-        desc: "高效原型设计，快速呈现产品交互雏形",
+        desc: "设计 1 + 2，摹客就够了！",
         url: "https://rp.mockplus.cn",
       },
-      /*      {
-        name: "Components | Calcite Design System | Esri Developer",
-        desc: "设计组件宝库，助力打造统一风格界面",
-        url: "https://developers.arcgis.com/calcite-design-system/components/",
-      },*/
       {
         name: "墨刀",
-        desc: "项目设计管理，清晰规划产品设计蓝图",
+        desc: "产品团队的专业原型设计与协作平台",
         url: "https://modao.cc/",
       },
       {
         name: "Axhub",
-        desc: "设计项目平台，汇聚多样设计创意灵感",
+        desc: "Axure 增强工具集合",
         url: "https://axhub.im/",
       },
     ],
@@ -76,11 +66,11 @@ const toolsData = [
         desc: "知识收藏天地，汇聚优质学习资料宝藏",
         url: "https://www.yuque.com/",
       },
-      // {
-      //   name: "Astro",
-      //   desc: "技术入门指引，轻松开启学习探索之路",
-      //   url: "https://docs.astro.build/zh-cn/getting-started/",
-      // },
+      {
+        name: "Astro",
+        desc: "技术入门指引，轻松开启学习探索之路",
+        url: "https://docs.astro.build/zh-cn/getting-started/",
+      },
       {
         name: "NestJs中文文档",
         desc: "框架入门解读，揭开强大框架神秘面纱",

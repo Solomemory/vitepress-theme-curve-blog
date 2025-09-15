@@ -2,7 +2,7 @@
 <template>
   <div class="link">
     <!-- 顶图 -->
-    <Banner type="page" title="效率工具" desc="与各位博主无限进步">
+    <Banner type="page" title="效率工具" desc="none">
       <template v-slot:header-slot>
         <Button label="随机访问" @click="randomJump"></Button>
       </template>
