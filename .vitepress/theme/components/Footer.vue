@@ -10,14 +10,6 @@
           <i class="iconfont icon-safe" />
           {{ theme.icp }}
         </a>
-        <a
-          class="upyun link"
-          href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"
-          target="_blank"
-        >
-          <i class="iconfont icon-upyun" />
-          又拍云
-        </a>
       </div>
       <div class="meta">
         <a class="power link" href="https://vitepress.dev/" target="_blank">
@@ -113,12 +105,6 @@ onBeforeUnmount(() => {
         .iconfont {
           font-size: 20px;
           opacity: 0.6;
-        }
-      }
-      .upyun {
-        .iconfont {
-          font-size: 20px;
-          font-weight: normal;
         }
       }
     }

@@ -130,7 +130,6 @@ watch(
 );
 
 onMounted(() => {
-  console.log(frontmatter.value, page.value, theme.value);
   // 全站置灰
   specialDayGray();
   // 更改主题类别
