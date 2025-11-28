@@ -1,7 +1,7 @@
 ---
 title: 实现Vue hooks plus的useRequest
-tags: [ 前端, Vue ]
-categories: [ 技术分享 ]
+tags: [前端, Vue]
+categories: [技术分享]
 date: 2025-06-09
 description: 详细讲解了如何实现一个类Vue Hooks Plus的useRequest自定义Hook，支持异步请求管理、轮询、生命周期回调等功能，并提供完整代码实现。
 articleGPT: 这是一个基于Vue的Hooks实现，用于管理异步请求的状态和生命周期。
