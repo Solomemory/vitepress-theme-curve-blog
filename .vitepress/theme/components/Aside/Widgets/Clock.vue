@@ -9,11 +9,13 @@
 </template>
 
 <script setup>
+import { withBase } from "vitepress";
 // 指针数据
 const hourRotate = ref(315);
 const minuteRotate = ref(45);
 const secondRotate = ref(180);
 const pointerInterval = ref(null);
+const image = ref(withBase("/images/logo/logo.webp"));
 
 // 计算指针旋转角度
 const updatePointer = () => {
@@ -44,7 +46,6 @@ onBeforeUnmount(() => {
   clearInterval(pointerInterval.value);
 });
 </script>
-
 <style lang="scss" scoped>
 .clock {
   width: 160px;
@@ -52,7 +53,7 @@ onBeforeUnmount(() => {
   border-radius: 50%;
   border: 6px solid var(--main-card-background);
   box-shadow: 0 8px 16px -4px var(--main-border-shadow);
-  background-image: linear-gradient(to bottom, #505152, #2e2f30);
+  background: v-bind(image) center center no-repeat;
   overflow: hidden;
   .clock-content {
     position: relative;

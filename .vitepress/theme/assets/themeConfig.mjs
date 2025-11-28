@@ -4,9 +4,9 @@ export const themeConfig = {
   siteMeta: {
     base: "/vitepress-theme-curve-blog/",
     // 站点标题
-    title: "夜默",
+    title: "琳琳子",
     // 站点描述
-    description: "夜默",
+    description: "琳琳子",
     // 站点logo
     logo: "/images/logo/logo.webp",
     // 站点地址
@@ -15,7 +15,7 @@ export const themeConfig = {
     lang: "zh-CN",
     // 作者
     author: {
-      name: "夜默",
+      name: "琳琳子",
       cover: "/images/logo/logo.webp",
       email: "114514@gmail.com",
       link: "https://www.imsyy.top",

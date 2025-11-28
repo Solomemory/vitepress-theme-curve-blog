@@ -35,7 +35,7 @@ defineProps({
   left: 0;
   height: 100%;
   width: 100%;
-  background: hsl(226, 25%, 69%);
+  background: color-mix(in srgb, var(--main-color), black 30%);
   border-radius: 8px;
   filter: blur(2px);
   will-change: transform;
@@ -52,10 +52,10 @@ defineProps({
   border-radius: 8px;
   background: linear-gradient(
     to right,
-    hsl(232, 84%, 60%) 0%,
-    hsl(232, 84%, 70%) 8%,
-    hsl(232, 84%, 60%) 92%,
-    hsl(232, 84%, 70%) 100%
+    var(--main-color) 0%,
+    color-mix(in srgb, var(--main-color), white 30%) 8%,
+    color-mix(in srgb, var(--main-color), black 20%) 92%,
+    var(--main-color) 100%
   );
 }
 
@@ -63,7 +63,7 @@ defineProps({
   display: block;
   position: relative;
   border-radius: 8px;
-  background: hsl(232, 84%, 60%);
+  background: var(--main-color);
   padding: 12px 24px;
   color: white;
   font-weight: 600;
