@@ -7,7 +7,7 @@ description:
 articleGPT:
 ---
 
-## CLI
+## 完整代码
 
 :::tabs
 == index.vue
