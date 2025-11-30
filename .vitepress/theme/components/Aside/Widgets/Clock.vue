@@ -1,5 +1,5 @@
 <template>
-  <div class="clock">
+  <div class="clock" :style="{ '--bg-image': `url(${image})` }">
     <div class="clock-content">
       <div :style="{ transform: ` rotate(${hourRotate}deg)` }" class="pointer hour" />
       <div :style="{ transform: ` rotate(${minuteRotate}deg)` }" class="pointer minute" />
@@ -15,7 +15,7 @@ const hourRotate = ref(315);
 const minuteRotate = ref(45);
 const secondRotate = ref(180);
 const pointerInterval = ref(null);
-const image = ref(withBase("/images/logo/logo.webp"));
+const image = withBase("/images/logo/logo.webp");
 
 // 计算指针旋转角度
 const updatePointer = () => {
@@ -53,7 +53,8 @@ onBeforeUnmount(() => {
   border-radius: 50%;
   border: 6px solid var(--main-card-background);
   box-shadow: 0 8px 16px -4px var(--main-border-shadow);
-  background: v-bind(image) center center no-repeat;
+  background: var(--bg-image) center center no-repeat;
+  background-size: 120% 120%;
   overflow: hidden;
   .clock-content {
     position: relative;

@@ -22,7 +22,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  map && map.remove();
+  map?.remove();
 });
 const initMap = () => {
   map = L.map("map", {
@@ -45,7 +45,7 @@ const initMap = () => {
   ]);
   satelliteTileLayer.addTo(map);
 
-  const marker = L.marker([50.5, 30.5]).addTo(map);
+  const marker = L.marker([34.74161249883172, 103.75488281250001]).addTo(map);
 
   marker.bindPopup(`<p>Hello world!<br />This is a nice popup.</p>`).openPopup();
 
