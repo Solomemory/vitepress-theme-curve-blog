@@ -1,17 +1,18 @@
 <template>
   <div class="footer-print">
-    <div id="map" ref="mapRef"></div>
+    <ClientOnly>
+      <div id="map" ref="mapRef"></div>
+    </ClientOnly>
   </div>
 </template>
 <script setup>
-import L from "leaflet";
-import "leaflet.chinatmsproviders";
 import { mainStore } from "@/store";
 const { theme } = useData();
 const { leaflet } = theme.value;
 let map = null;
 const mapRef = ref(null);
 const store = mainStore();
+
 onMounted(() => {
   watch(
     () => store.loadingStatus,
@@ -19,12 +20,30 @@ onMounted(() => {
       initMap();
     },
   );
+  
+  // 动态导入leaflet库，确保只在客户端加载
+  import('leaflet')
+    .then((module) => {
+      const L = module.default;
+      import('leaflet.chinatmsproviders')
+        .then(() => {
+          window.L = L;
+          initMap();
+        });
+    });
 });
 
 onUnmounted(() => {
   map?.remove();
 });
+
 const initMap = () => {
+  if (typeof window === 'undefined' || !document.getElementById('map')) {
+    return;
+  }
+  
+  const L = window.L;
+  
   map = L.map("map", {
     minZoom: 1, //最小缩放值
     maxZoom: 18, //最大缩放值
