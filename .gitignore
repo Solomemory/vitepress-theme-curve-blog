@@ -33,5 +33,3 @@ themeConfig.mjs
 *.njsproj
 *.sln
 *.sw?
-
-.vercel
