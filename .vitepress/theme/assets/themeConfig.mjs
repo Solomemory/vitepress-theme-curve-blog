@@ -4,9 +4,9 @@ export const themeConfig = {
   siteMeta: {
     base: "/vitepress-theme-curve-blog/",
     // 站点标题
-    title: "琳琳子",
+    title: "SoloMemory",
     // 站点描述
-    description: "琳琳子",
+    description: "SoloMemory",
     // 站点logo
     logo: "/images/logo/logo.webp",
     // 站点地址
@@ -15,10 +15,10 @@ export const themeConfig = {
     lang: "zh-CN",
     // 作者
     author: {
-      name: "琳琳子",
+      name: "SoloMemory",
       cover: "/images/logo/logo.webp",
-      email: "114514@gmail.com",
-      link: "https://www.imsyy.top",
+      email: "",
+      link: "",
     },
   },
   // 备案信息
