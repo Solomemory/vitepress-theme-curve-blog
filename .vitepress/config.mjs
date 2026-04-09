@@ -168,27 +168,27 @@ export default withPwa(
         short_name: themeConfig.siteMeta.title,
         description: themeConfig.siteMeta.description,
         display: "standalone",
-        start_url: "/",
+        start_url: themeConfig.siteMeta.base,
         theme_color: "#fff",
         background_color: "#efefef",
         icons: [
           {
-            src: "/images/logo/favicon-32x32.webp",
+            src: `${themeConfig.siteMeta.base.replace(/\/$/, "")}/images/logo/favicon-32x32.webp`,
             sizes: "32x32",
             type: "image/webp",
           },
           {
-            src: "/images/logo/favicon-96x96.webp",
+            src: `${themeConfig.siteMeta.base.replace(/\/$/, "")}/images/logo/favicon-96x96.webp`,
             sizes: "96x96",
             type: "image/webp",
           },
           {
-            src: "/images/logo/favicon-256x256.webp",
+            src: `${themeConfig.siteMeta.base.replace(/\/$/, "")}/images/logo/favicon-256x256.webp`,
             sizes: "256x256",
             type: "image/webp",
           },
           {
-            src: "/images/logo/favicon-512x512.webp",
+            src: `${themeConfig.siteMeta.base.replace(/\/$/, "")}/images/logo/favicon-512x512.webp`,
             sizes: "512x512",
             type: "image/webp",
           },

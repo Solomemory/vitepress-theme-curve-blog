@@ -1,8 +1,11 @@
+const siteBase = "/vitepress-theme-curve-blog/";
+const withSiteBase = (path = "") => new URL(path.replace(/^\//, ""), `https://example.com${siteBase}`).pathname;
+
 // 主题配置
 export const themeConfig = {
   // 站点信息
   siteMeta: {
-    base: "/vitepress-theme-curve-blog/",
+    base: siteBase,
     // 站点标题
     title: "SoloMemory",
     // 站点描述
@@ -33,7 +36,7 @@ export const themeConfig = {
     // https://vitepress.dev/zh/reference/site-config#head
     header: [
       // favicon
-      ["link", { rel: "icon", href: "/favicon.ico" }],
+      ["link", { rel: "icon", href: withSiteBase("/favicon.ico") }],
       // RSS
       [
         "link",
